@@ -1,0 +1,112 @@
+{
+  "skill": "kill-test-first",
+  "cases": [
+    {
+      "id": 1,
+      "name": "形态匹配ETF策略-第0天假设回放",
+      "date": "2026-06-07",
+      "type": "replay",
+      "background": {
+        "actual_outcome": "7天内(2026-05-13至05-19)高速迭代18版(v0-v17,一天2-3版),直到开发收尾后的复盘(5-21总结、6-01评估)才发现核心假设理论上注定失败,滚动IC从V2系统性为负(开发7天里一次都没暴露)",
+        "key_lesson": "迭代速度快不等于方向对;7天18版每版都在优化执行,无一版问'该不该做';事前否决本可第1天STOP。越能快速迭代越需要这道闸",
+        "replay_goal": "把时钟拨回第0天,验证kill-test-first门1能否在开工前拦下"
+      },
+      "gate1": {
+        "falsifiable_claim": "日频数据上,DTW距离选出的top-K最相似历史形态,其后续H日收益对目标后续H日收益有正的、样本外显著预测力(RankIC>0且优于朴素动量基线)",
+        "strongest_counter": "DTW为容忍时间弯折匹配形状而牺牲精确时间位置;预测未来最依赖最近一段位置精确的方向性动量;弯折把形状像但方向相反的片段判为近邻;DTW不创造信息只换度量;弱有效市场日频方向近鞅",
+        "counter_is_apriori": true,
+        "cheapest_test": {
+          "data": "中证500 sh000905 日线",
+          "design": "过去L=20日形态→DTW取top-K=20历史近邻→用近邻后续H=5日收益预测目标后续5日收益,算样本外RankIC",
+          "no_leakage_constraint": "s+H<=t-L",
+          "baseline_included": true,
+          "N": 178,
+          "results": {
+            "DTW_nn": {"rankIC": 0.0160, "dir_hit": 0.584},
+            "euclidean_nn": {"rankIC": -0.0575, "dir_hit": 0.517},
+            "naive_momentum_baseline": {"rankIC": 0.0969, "dir_hit": 0.567}
+          }
+        },
+        "death_criterion_preregistered": "DTW RankIC<=0 或 DTW不优于朴素动量基线 => STOP"
+      },
+      "verdict": "STOP",
+      "verdict_reason": "DTW+0.016约等于噪声(N=178下1个标准误约0.075),被朴素动量+0.097碾压,欧氏为负;形状弯折是负价值,坐实先验反方论证",
+      "adversarial_self_check": {
+        "counter_apriori_not_cheating": true,
+        "experiment_really_run": true,
+        "honest_boundary": "测中证500指数+特定参数(L20/H5/K20),非原ETF截面策略精确复现;不能证明原策略必死,也不需要——事前否决只把举证责任压到建设之前"
+      },
+      "skill_outcome": {
+        "validated": ["加载顺畅", "门1四动作可照做", "第0天触发STOP"],
+        "improvement_forced": "门1动作3补入'必带朴素基线对照'(对应playbook §11.3),因微弱正IC需基线对照才能戳穿"
+      }
+    },
+    {
+      "id": 2,
+      "name": "kill-test-first自身的三审定稿史",
+      "date": "2026-06-07",
+      "type": "self_review_history",
+      "evidence_boundary": "单点过程记录,非'多模型审查>单模型自审'的证明;只展示这一次独立审查抓到了自审没抓到的,不可外推为普遍结论",
+      "review_chain": [
+        {"stage": "设计", "role": "Claude Opus 4.8", "involvement": "设计者(非独立)", "output": "轻量触发器初版+自审对抗式自检"},
+        {"stage": "回放", "role": "Claude", "involvement": "自验(非独立)", "output": "案例1:DTW被朴素动量碾压→逼出'必带基线'"},
+        {"stage": "第1轮独立审", "role": "Codex", "involvement": "零卷入", "output": "判重大修改:5条硬伤(独立否决无机制/死亡判据顺序bug/门1门2数据边界/过度声称/前置门槛外包)+alpha误定位"},
+        {"stage": "整合大改", "role": "Claude整合官", "involvement": "-", "output": "全采纳→重写完备协议版"},
+        {"stage": "第2轮独立审", "role": "Qwen3-235B-A22B", "involvement": "零卷入", "output": "判小改后定稿·0高风险硬伤;确认Codex5/5解决;抓大改新引入问题(REDESIGN可逃避STOP/三态未覆盖象限);建议砍自身死亡判据"},
+        {"stage": "调和定稿", "role": "用户(decision owner)", "involvement": "-", "output": "采纳qwen中风险小改;自身死亡判据保留(调和Codex'加'vs qwen'砍'的对冲)"}
+      ],
+      "observations_not_universal": [
+        "自审有盲点:Claude对抗式自检没发现死亡判据顺序bug,Codex一眼抓到",
+        "两轮独立审各抓各的不重复:Codex抓原版硬伤,qwen抓大改后新引入问题",
+        "两独立模型会对冲:Codex推完备vs qwen推精简,在自身死亡判据上方向相反,由人调和",
+        "收敛判据防无限诊断:预设无高风险硬伤即定稿,第2轮0硬伤即收口"
+      ],
+      "artifacts": ["kill-test-first_独立复审_Codex_2026-06-07.{md,json}", "kill-test-first_独立复审_qwen37max_2026-06-07.{md,json}", "两份复审提示词双件"],
+      "still_unanswered": "三审定稿≠有效;真有没有alpha两轮纸面复审都答不了,只能靠前瞻/盲化使用验证;定稿只说明内部自洽无已知硬伤,不说明真能改变决策",
+      "incremental_review_prior_art_gate_2026_06_09": {
+        "what": "门1步骤2先验对标关由 Claude Opus 4.8 单独新增、未先经独立审 → 换 ChatGPT-5.5 做零卷入增量复审(只审这一关, 非重审整体)",
+        "reviewer_identity": "执行身份自报 Codex/GPT-5 系(=Codex CLI 同款模型, 与原版第1轮同款); 对新增关零卷入、对整体非全新视角; 自陈未外部核验 FMTI/LIT 事实",
+        "verdict": "小改后保留",
+        "key_findings": "F2假阴性(术语找不对→搜索看似合格, 最高价值) / F3'说不清差异'不可判定 / F4+F8缺可验证来源与检索日志、走过场 / F7b真实SKILL与EXAMPLES未同步案例3(Opus漏改) / F1可能误读为跳过最强反方 / F5价值=通用脚手架非独有alpha但作screen成立",
+        "decision_owner_action": "Opus 按'精简硬化'尺度落地8条: 术语三角验证+negative_scope / 差异比核心问题·输出物·评估指标三项 / 具名先例须可验证链接(AI只候选) / '搜过'判不合格 / 步骤3必填提醒 / Self-check纳入 / 门1标题改'早于cheap test结果'。用 reviewer 自己的 F5(screen非full review)制约 F2/F3/F4 避免过度工程",
+        "opus_self_disclosed_error": "递给 reviewer 的 prompt 附件A曾手改成'已同步版'、与真实文件不一致(F7b戳穿); 已修真实文件。继 Codex/GPT-5.5 当两个模型后第二次失真, 强化'核实关'必要性",
+        "artifacts": ["kill-test-first_先验对标关_复审_GPT55_prompt.md", "kill-test-first_先验对标关_复审_GPT55_config.json", "kill-test-first_先验对标关_独立复审_GPT55_2026-06-09.md", "kill-test-first_先验对标关_独立复审_GPT55_2026-06-09.json"]
+      }
+    },
+    {
+      "id": 3,
+      "name": "LIT零对标FMTI-事前对标回放",
+      "date": "2026-06-09",
+      "type": "replay",
+      "gate": "门1步骤2 先验对标(prior-art check)",
+      "evidence_boundary": "2026-06-09对已知结局(已发现重合)的事后回放,存在hindsight;只说明对标关在此回放给出REDESIGN信号,不能证明LIT第0天必然搜到FMTI(取决于检索质量/术语找没找对)",
+      "background": {
+        "actual_outcome": "LIT由autonomous agent自主设计14类目×48-53项评LLM报告披露,全程零引用零对标;2026-06-09第四轮方法论评估才发现与Stanford FMTI(100指标,已评含Anthropic/OpenAI在内10-14家主流厂商)高度重合",
+        "key_lesson": "教训不是做错,是做了别人已做过且更成熟的东西却不自知;agent参数里其实知道FMTI但构建模式下不主动调出对标",
+        "replay_goal": "把时钟拨回LIT第0天,用门1步骤2先验对标跑一遍能否拦下重复造轮子"
+      },
+      "prior_art_check": {
+        "terminology": ["transparency index", "disclosure evaluation", "transparency reporting"],
+        "terminology_note": "不知道这串黑话就搜不到,非专家agent的盲区",
+        "adversarial_query": "假设我在重复造轮子最可能重复了谁",
+        "nearest_prior_work": {"name": "Stanford FMTI", "cite": "Bommasani et al. 2023, arXiv:2310.12941", "verified_online": true},
+        "three_questions": {
+          "what_exists": "FMTI:100指标×3域(upstream/model/downstream)/多评分者/公开协议/已评主流厂商/median 37",
+          "my_difference": "LIT有0-3质量分级+对抗式诚信类目(framing/consistency/independence/leaderboard)+单报告深读+跨代+中国语境;FMTI二元指标/厂商级/横截面。差异真实但局部",
+          "why_not_just_use_theirs": "重叠主体(披露完整性那部分)说不清为何不直接用FMTI"
+        }
+      },
+      "verdict": "REDESIGN",
+      "verdict_reason": "重叠主体大且重叠部分说不清差异→不该从零造独立评估框架,应改成'FMTI的对抗式补充模块';是REDESIGN非STOP(对抗式类目是真增量但不该以独立框架身份存在)",
+      "honest_boundary": {
+        "hindsight": "结局已知才搜得准;第0天能否搜到取决于术语找没找对/用了几个来源",
+        "honest_attribution": "对标价值是通用研究脚手架(任何研究都该先做related work),非skill独有alpha;和案例1'必带基线属通用脚手架'同理;skill价值=强制前置+留痕",
+        "single_point": "单点回放非'对标关有效'的证明;真有效需前瞻/盲化(不知结局者用/不用这关比重复率/省的沉没成本)"
+      },
+      "skill_outcome": {
+        "validated": ["坐实门1步骤2位置:对标在cheap test之前;LIT若先对标根本不用跑评分实验就该REDESIGN,比案例1 DTW更早更便宜"],
+        "improvement_forced": "逼出'先要术语'子步骤:LIT根因是agent不知这事叫transparency index→检索第一步必须问黑话,否则非专家+agent双盲"
+      }
+    }
+  ]
+}
