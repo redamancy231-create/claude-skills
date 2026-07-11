@@ -167,6 +167,26 @@ cp -r claude-skills/session-end ~/.claude/skills/   # pick the one you need
 
 ---
 
+
+## Related Projects
+
+| Project | Relationship |
+|------|------|
+| [**AI Collaboration Framework**](https://github.com/redamancy231-create/ai-collaboration-framework) | **Methodology upstream** — these skills were extracted from the framework (§9.2–§9.3) after 50+ rounds of cross-model review |
+| [**Independent Review Toolkit**](https://github.com/redamancy231-create/independent-review-toolkit) | **Review methodology source** — each skill in this collection was independently validated using the toolkit's SOP |
+| [**Prompt-TDD Methodology**](https://github.com/redamancy231-create/prompt-tdd-methodology) | **Sibling project** — kill-test-first is a direct application of the prompt-TDD controlled experiment protocol |
+
+<details>
+<summary>中文</summary>
+
+| 项目 | 关系 |
+|------|------|
+| [**AI 协作框架**](https://github.com/redamancy231-create/ai-collaboration-framework) | **方法论上游** — 这些 Skill 从框架 §9.2–§9.3 提取，经 50+ 轮跨模型审查 |
+| [**Independent Review Toolkit**](https://github.com/redamancy231-create/independent-review-toolkit) | **审查方法来源** — 集合中每个 Skill 均使用该工具包 SOP 进行独立验证 |
+| [**Prompt-TDD Methodology**](https://github.com/redamancy231-create/prompt-tdd-methodology) | **同系项目** — kill-test-first 是 prompt-TDD 对照实验协议的直接应用 |
+
+</details>
+
 ## License
 
 CC BY 4.0 — see individual `SKILL.md` frontmatter for per-skill provenance and verification status.
