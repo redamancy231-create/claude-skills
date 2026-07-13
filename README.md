@@ -5,6 +5,7 @@
 [![Codex](https://img.shields.io/badge/Codex-compatible-10A37F)](https://developers.openai.com/codex/skills)
 [![Skills](https://img.shields.io/badge/Skills-3-blue)](.)
 [![Awesome Skills](https://img.shields.io/badge/featured_in-awesome--skills-brightgreen)](https://github.com/gmh5225/awesome-skills)
+[![Featured](https://img.shields.io/badge/featured-chinese--independent--developer-orange)](https://github.com/1c7/chinese-independent-developer)
 
 > **Battle-tested Claude Code Skills for session handoff, project documentation, and decision audit.**
 > Derived from 50+ rounds of cross-model independent review across 5 LLM backends in production projects.
