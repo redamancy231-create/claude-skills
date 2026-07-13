@@ -41,12 +41,12 @@ def parse_skip_flags(filepath: str):
 
     frontmatter = match.group(1)
 
-    # Check staleness_check: false (anywhere in frontmatter)
-    if re.search(r"staleness_check\s*:\s*false", frontmatter):
+    # Check staleness_check: false (anchored to line start to avoid matching inside description strings)
+    if re.search(r"^\s*staleness_check\s*:\s*false", frontmatter, re.MULTILINE):
         return True, "staleness_check=false"
 
-    # Check metadata.status for CLOSED/ARCHIVED variants
-    status_match = re.search(r"status\s*:\s*(\S.*)", frontmatter)
+    # Check status field for CLOSED/ARCHIVED variants (line-anchored, same reason)
+    status_match = re.search(r"^\s*status\s*:\s*(\S.*)", frontmatter, re.MULTILINE)
     if status_match:
         raw = status_match.group(1).strip()
         # Handle quoted and unquoted values
