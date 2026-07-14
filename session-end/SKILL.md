@@ -5,6 +5,7 @@ allowed-tools: Read, Write, Edit, Bash(git:*), Bash(python:*), Glob, Grep
 source: self
 source_type: self
 license: "CC-BY-4.0"
+verified_by: "GPT-5.5, DeepSeek-V4-Pro, Kimi-K2.7, Qwen3.7-Max, GLM-5.2"
 ---
 
 # Session End（会话交接标准化执行器）
