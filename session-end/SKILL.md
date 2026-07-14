@@ -2,6 +2,9 @@
 name: session-end
 description: '[流程:交接] Standardized session handoff executor per AI collaboration framework §9.3. Runs Session Start checklist (verify CLAUDE.md/memory loaded, check memory staleness >30d, load project status, confirm environment) and Session End checklist (update project_status.md, write standardized Next Steps with priority+dependencies, capture cross-task lessons to memory/, flag Retrospect candidates). Use when ending a substantive work session, before context switching, or when invoked as /session-end. Do NOT use for quick Q&A or trivial turns — only sessions that produced or changed project state. Manual invocation only, not automated via Stop hook.'
 allowed-tools: Read, Write, Edit, Bash(git:*), Bash(python:*), Glob, Grep
+source: self
+source_type: self
+license: "CC-BY-4.0"
 ---
 
 # Session End（会话交接标准化执行器）

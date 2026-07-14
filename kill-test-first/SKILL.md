@@ -2,6 +2,9 @@
 name: kill-test-first
 description: '[决策:预注册] Pre-registration audit for new research directions, quant strategies, or thesis topics: falsifiable hypothesis, prior-art check, strongest counter-argument, death criteria before results, cheapest falsification with strong baseline, three-state verdict (GO/STOP/REDESIGN). Use before committing resources to a new direction. Not for bug fixes, experiment reproduction, or routine controlled experiments.'
 allowed-tools: Read, Grep, Glob, WebSearch, WebFetch
+source: self
+source_type: self
+license: "CC-BY-4.0"
 ---
 
 # Kill-Test First（事前否决 + 预登记）

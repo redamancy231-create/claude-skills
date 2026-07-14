@@ -2,6 +2,9 @@
 name: write-claude-md
 description: '[流程:项目] Create or optimize project-level CLAUDE.md. Triggers when user asks to write/create/optimize/review a CLAUDE.md file, or when a new project lacks one. Uses five-step protocol: evidence collection, vulnerability testing, five-gap/five-abuse checks, empirical rules, and optional multi-backend validation. Not for: general documentation writing, README creation, project scaffolding, or conceptual discussions about CLAUDE.md without modification intent.'
 allowed-tools: Read, Write, Edit, Bash(git:*), Glob, Grep
+source: self
+source_type: self
+license: "CC-BY-4.0"
 ---
 
 # Write CLAUDE.md — 项目级 CLAUDE.md 编写/优化执行器
