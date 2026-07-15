@@ -177,7 +177,9 @@ cp -r claude-skills/session-end ~/.claude/skills/   # pick the one you need
 | [**AI Collaboration Framework**](https://github.com/redamancy231-create/ai-collaboration-framework) | **Methodology upstream** — these skills were extracted from the framework (§9.2–§9.3) after 50+ rounds of cross-model review |
 | [**Independent Review Toolkit**](https://github.com/redamancy231-create/independent-review-toolkit) | **Review methodology source** — each skill in this collection was independently validated using the toolkit's SOP |
 | [**Prompt-TDD Methodology**](https://github.com/redamancy231-create/prompt-tdd-methodology) | **Sibling project** — kill-test-first is a direct application of the prompt-TDD controlled experiment protocol |
-| [**DOCX Pipeline**](https://github.com/redamancy231-create/docx-pipeline) | **Sibling project** — Markdown → Chinese DOCX pipeline; used session-end and write-claude-md skills during its own 3-round review process |
+| [**DOCX Pipeline**](https://github.com/redamancy231-create/docx-pipeline) | **Sibling project** — Markdown → Chinese DOCX pipeline; used session-end and write-claude-md during its own 3-round review process |
+| [**ETF Pattern Match — pybind11**](https://github.com/redamancy231-create/etf-pattern-match-pybind11) | **Sibling project** — C++20/pybind11 quant strategy acceleration; similarly applies multi-model review closure |
+| [**M&A Case Study Pipeline**](https://github.com/redamancy231-create/ma-case-study-pipeline) | **Sibling project** — 8-stage multi-model academic production pipeline with cross-blind review |
 | [**Awesome Skills**](https://github.com/gmh5225/awesome-skills) | **Featured in** — this skill collection is listed in the awesome-skills curated directory of agent skills |
 
 <details>
@@ -189,6 +191,8 @@ cp -r claude-skills/session-end ~/.claude/skills/   # pick the one you need
 | [**Independent Review Toolkit**](https://github.com/redamancy231-create/independent-review-toolkit) | **审查方法来源** — 集合中每个 Skill 均使用该工具包 SOP 进行独立验证 |
 | [**Prompt-TDD Methodology**](https://github.com/redamancy231-create/prompt-tdd-methodology) | **同系项目** — kill-test-first 是 prompt-TDD 对照实验协议的直接应用 |
 | [**DOCX Pipeline**](https://github.com/redamancy231-create/docx-pipeline) | **同系项目** — Markdown → 中文 DOCX 泛化管道；在其 3 轮审查过程中使用了 session-end 和 write-claude-md |
+| [**ETF Pattern Match — pybind11**](https://github.com/redamancy231-create/etf-pattern-match-pybind11) | **同系项目** — C++20/pybind11 加速量化策略；同样采用多模型审查闭合 |
+| [**M&A Case Study Pipeline**](https://github.com/redamancy231-create/ma-case-study-pipeline) | **同系项目** — 8 阶段多模型学术生产流水线 |
 | [**Awesome Skills**](https://github.com/gmh5225/awesome-skills) | **收录于** — 本 Skill 集合已被 awesome-skills 精选目录收录 |
 
 </details>
