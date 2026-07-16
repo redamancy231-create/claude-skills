@@ -2,14 +2,12 @@
 
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![Claude Code](https://img.shields.io/badge/Claude_Code-compatible-8A2BE2)](https://docs.anthropic.com/en/docs/claude-code/skills)
-[![Codex](https://img.shields.io/badge/Codex-compatible-10A37F)](https://developers.openai.com/codex/skills)
 [![Skills](https://img.shields.io/badge/Skills-3-blue)](.)
 [![Awesome Skills](https://img.shields.io/badge/featured_in-awesome--skills-brightgreen)](https://github.com/gmh5225/awesome-skills)
-[![Featured](https://img.shields.io/badge/featured-chinese--independent--developer-orange)](https://github.com/1c7/chinese-independent-developer)
+[![Featured](https://img.shields.io/badge/featured-chinese--independent-developer-orange)](https://github.com/1c7/chinese-independent-developer)
 
 > **Battle-tested Claude Code Skills for session handoff, project documentation, and decision audit.**
 > Derived from 50+ rounds of cross-model independent review across 5 LLM backends in production projects.
-> Compatible with Claude Code, Codex, Cursor, and Gemini CLI.
 
 ---
 
@@ -115,7 +113,7 @@ Gate 2: Pre-registration Freeze (only if GO)
 
 ### Prerequisites
 
-- [Claude Code](https://docs.anthropic.com/en/docs/claude-code/overview) (or Codex, Cursor, Gemini CLI)
+- [Claude Code](https://docs.anthropic.com/en/docs/claude-code/overview)
 - `~/.claude/skills/` directory (create if missing: `mkdir -p ~/.claude/skills/`)
 
 ### Install all three
