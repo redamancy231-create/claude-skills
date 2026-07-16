@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use these skills in your project or research, please cite them as below."
+title: "Claude Skills — Battle-Tested Claude Code Skills for Session Handoff, Project Documentation, and Decision Audit"
+authors:
+  - given-names: Acerolaorion
+type: software
+license: CC-BY-4.0
+version: 1.0.0
+date-released: 2026-07-10
+url: "https://github.com/redamancy231-create/claude-skills"
+abstract: "Three field-verified Claude Code Skills extracted from 50+ rounds of cross-model independent review across 5 LLM backends: session-end (session handoff), write-claude-md (CLAUDE.md authoring), and kill-test-first (pre-registration decision audit). Each skill follows a unified router-pattern design with progressive disclosure and was independently validated through adversarial multi-backend review."
+keywords:
+  - "claude-code"
+  - "agent-skills"
+  - "ai-collaboration"
+  - "session-handoff"
+  - "project-documentation"
+  - "decision-audit"
+  - "multi-model-review"
