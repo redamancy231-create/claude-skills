@@ -1,12 +1,13 @@
-> [中文](../README.md) | English | [正體中文](../zh-Hant/README.md)
+> [简体中文](../README.md) | English | [正體中文](../zh-Hant/README.md)
 
 # Claude Skills
 
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![Claude Code](https://img.shields.io/badge/Claude_Code-compatible-8A2BE2)](https://docs.anthropic.com/en/docs/claude-code/skills)
-[![Skills](https://img.shields.io/badge/Skills-3-blue)](.)
+[![Skills](https://img.shields.io/badge/Skills-3-blue)](..)
 [![Awesome Skills](https://img.shields.io/badge/featured_in-awesome--skills-brightgreen)](https://github.com/gmh5225/awesome-skills)
 [![Featured](https://img.shields.io/badge/featured-Chinese_Independent_Developer-orange)](https://github.com/1c7/chinese-independent-developer)
+[![简体中文](https://img.shields.io/badge/README-简体中文-red)](../README.md) [![English](https://img.shields.io/badge/README-English-blue)](.) [![正體中文](https://img.shields.io/badge/README-正體中文-orange)](../zh-Hant/README.md)
 
 > **Battle-tested Claude Code Skills for session handoff, project documentation, and decision audit.**
 > Derived from 50+ rounds of cross-model independent review across 5 LLM backends in production projects.
@@ -38,7 +39,7 @@ Every skill in this collection was extracted from real project workflows — not
 
 Standardized handoff executor per AI collaboration framework §9.3. Prevents context loss across sessions.
 
-**Session Start checklist (7 items):**
+**Session Start checklist (4 of 7 items shown):**
 - Verify CLAUDE.md + MEMORY.md loaded and current
 - Check memory staleness (>30d → flag for review)
 - Load project_status.md and confirm current phase
@@ -53,7 +54,7 @@ Standardized handoff executor per AI collaboration framework §9.3. Prevents con
 
 **When to use:** Ending a session that produced or changed project state. Not for quick Q&A (<5 turns, no file changes).
 
-**Files:** `SKILL.md` · [reference/](session-end/reference/) · [scripts/](session-end/scripts/) · [templates/](session-end/templates/)
+**Files:** `SKILL.md` · [reference/](../session-end/reference/) · [scripts/](../session-end/scripts/) · [templates/](../session-end/templates/)
 
 ---
 
@@ -63,7 +64,7 @@ Standardized handoff executor per AI collaboration framework §9.3. Prevents con
 
 Five-step protocol for creating or auditing project-level CLAUDE.md files. Not a template filler — a structured audit that asks whether each line actually constrains agent behavior.
 
-**Five-step protocol:**
+**Step 0 + five-step protocol:**
 
 | Step | What | Core question |
 |:--:|------|---------------|
@@ -76,7 +77,7 @@ Five-step protocol for creating or auditing project-level CLAUDE.md files. Not a
 
 **Lifecycle-aware:** Different weights for active vs. maintenance vs. CLOSED/frozen projects. CLOSED projects prioritize pitfall documentation and restart instructions over active development commands.
 
-**Files:** `SKILL.md` · [reference/](write-claude-md/reference/) · [templates/](write-claude-md/templates/)
+**Files:** `SKILL.md` · [reference/](../write-claude-md/reference/) · [templates/](../write-claude-md/templates/)
 
 ---
 
@@ -107,7 +108,7 @@ Gate 2: Pre-registration Freeze (only if GO)
 5. Transaction costs / capacity limits
 6. Multiple comparison correction
 
-**Files:** `SKILL.md` · [reference/](kill-test-first/reference/) · [EXAMPLES.md](kill-test-first/EXAMPLES.md)
+**Files:** `SKILL.md` · [reference/](../kill-test-first/reference/) · [EXAMPLES.md](../kill-test-first/EXAMPLES.md)
 
 ---
 

@@ -1,4 +1,4 @@
-> [English](en/README.md) | 中文 | [正體中文](zh-Hant/README.md)
+> [English](en/README.md) | 简体中文 | [正體中文](zh-Hant/README.md)
 
 # Claude Skills
 
@@ -7,6 +7,7 @@
 [![Skills](https://img.shields.io/badge/Skills-3-blue)](.)
 [![Awesome Skills](https://img.shields.io/badge/featured_in-awesome--skills-brightgreen)](https://github.com/gmh5225/awesome-skills)
 [![Featured](https://img.shields.io/badge/featured-Chinese_Independent_Developer-orange)](https://github.com/1c7/chinese-independent-developer)
+[![简体中文](https://img.shields.io/badge/README-简体中文-red)](.) [![English](https://img.shields.io/badge/README-English-blue)](en/README.md) [![正體中文](https://img.shields.io/badge/README-正體中文-orange)](zh-Hant/README.md)
 
 > **三个经过实战验证的 Claude Code Skill——会话交接、项目文档生成、事前否决审计。**
 > 提取自 50+ 轮跨 5 种 LLM 后端的独立审查，来自真实生产项目。
@@ -38,7 +39,7 @@
 
 标准化会话交接执行器（基于 AI 协作框架 §9.3）。防止跨会话上下文丢失。
 
-**会话开始检查清单（7 项）：**
+**会话开始检查清单（展示 4/7 项）：**
 - 验证 CLAUDE.md + MEMORY.md 已加载且为最新
 - 检查记忆陈旧度（>30 天 → 标记待审查）
 - 加载 project_status.md 并确认当前阶段
@@ -63,7 +64,7 @@
 
 五步协议——创建或审计项目级 CLAUDE.md 文件。不是模板填空——是结构化审计，问每一行是否真的约束了 Agent 行为。
 
-**五步协议：**
+**步骤 0 + 五步协议：**
 
 | 步骤 | 内容 | 核心问题 |
 |:--:|------|---------------|

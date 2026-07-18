@@ -4,9 +4,10 @@
 
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![Claude Code](https://img.shields.io/badge/Claude_Code-compatible-8A2BE2)](https://docs.anthropic.com/en/docs/claude-code/skills)
-[![Skills](https://img.shields.io/badge/Skills-3-blue)](.)
+[![Skills](https://img.shields.io/badge/Skills-3-blue)](..)
 [![Awesome Skills](https://img.shields.io/badge/featured_in-awesome--skills-brightgreen)](https://github.com/gmh5225/awesome-skills)
 [![Featured](https://img.shields.io/badge/featured-Chinese_Independent_Developer-orange)](https://github.com/1c7/chinese-independent-developer)
+[![简体中文](https://img.shields.io/badge/README-简体中文-red)](../README.md) [![English](https://img.shields.io/badge/README-English-blue)](../en/README.md) [![正體中文](https://img.shields.io/badge/README-正體中文-orange)](.)
 
 > **三個經過實戰驗證的 Claude Code Skill——會話交接、項目文檔生成、事前否決審計。**
 > 提取自 50+ 輪跨 5 種 LLM 後端的獨立審查，來自真實生產項目。
@@ -38,7 +39,7 @@
 
 標準化會話交接執行器（基於 AI 協作框架 §9.3）。防止跨會話上下文丟失。
 
-**會話開始檢查清單（7 項）：**
+**會話開始檢查清單（展示 4/7 項）：**
 - 驗證 CLAUDE.md + MEMORY.md 已加載且爲最新
 - 檢查記憶陳舊度（>30 天 → 標記待審查）
 - 加載 project_status.md 並確認當前階段
@@ -53,7 +54,7 @@
 
 **觸發條件：** 產生或改變了項目狀態的會話結束時。快問快答（<5 輪，無文件變更）不用。
 
-**文件：** `SKILL.md` · [reference/](session-end/reference/) · [scripts/](session-end/scripts/) · [templates/](session-end/templates/)
+**文件：** `SKILL.md` · [reference/](../session-end/reference/) · [scripts/](../session-end/scripts/) · [templates/](../session-end/templates/)
 
 ---
 
@@ -63,7 +64,7 @@
 
 五步協議——創建或審計項目級 CLAUDE.md 文件。不是模板填空——是結構化審計，問每一行是否真的約束了 Agent 行爲。
 
-**五步協議：**
+**步驟 0 + 五步協議：**
 
 | 步驟 | 內容 | 核心問題 |
 |:--:|------|---------------|
@@ -74,9 +75,9 @@
 | 4 | 實證規則 | 白名單指針化、術語顯式定義、不維護"最後更新"日期 |
 | 5 | 多後端驗證 | （重要項目）同 prompt → ≥2 個不同後端 → 收斂/衝突解決 |
 
-**生命週期感知：** 活躍/維護/CLOSED-凍結項目使用不同權重。CLOSED 項目優先記錄避坑和重啓動指令，而非活躍開發命令。
+**生命週期感知：** 活躍/維護/CLOSED-凍結項目使用不同權重。CLOSED 項目優先記錄避坑和重新啟動指令，而非活躍開發命令。
 
-**文件：** `SKILL.md` · [reference/](write-claude-md/reference/) · [templates/](write-claude-md/templates/)
+**文件：** `SKILL.md` · [reference/](../write-claude-md/reference/) · [templates/](../write-claude-md/templates/)
 
 ---
 
@@ -107,7 +108,7 @@
 5. 交易成本/容量限制
 6. 多重比較校正
 
-**文件：** `SKILL.md` · [reference/](kill-test-first/reference/) · [EXAMPLES.md](kill-test-first/EXAMPLES.md)
+**文件：** `SKILL.md` · [reference/](../kill-test-first/reference/) · [EXAMPLES.md](../kill-test-first/EXAMPLES.md)
 
 ---
 
