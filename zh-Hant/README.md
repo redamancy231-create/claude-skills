@@ -7,14 +7,14 @@
 [![Skills](https://img.shields.io/badge/Skills-3-blue)](..)
 [![Awesome Skills](https://img.shields.io/badge/featured_in-awesome--skills-brightgreen)](https://github.com/gmh5225/awesome-skills)
 [![Featured](https://img.shields.io/badge/featured-Chinese_Independent_Developer-orange)](https://github.com/1c7/chinese-independent-developer)
-[![简体中文](https://img.shields.io/badge/README-简体中文-red)](../README.md) [![English](https://img.shields.io/badge/README-English-blue)](../en/README.md) [![正體中文](https://img.shields.io/badge/README-正體中文-orange)](.)
+[![简体中文](https://img.shields.io/badge/README-簡體中文-red)](.) [![English](https://img.shields.io/badge/README-English-blue)](en/README.md) [![正體中文](https://img.shields.io/badge/README-正體中文-orange)](zh-Hant/README.md)
 
 > **三個經過實戰驗證的 Claude Code Skill——會話交接、項目文檔生成、事前否決審計。**
 > 提取自 50+ 輪跨 5 種 LLM 後端的獨立審查，來自真實生產項目。
 
 ---
 
-## 爲什麼是這些 Skill？
+## 為什麼是這些 Skill？
 
 集合中每個 Skill 都從真實項目工作流中提取——不是在真空中設計。每一個都：
 
@@ -35,12 +35,12 @@
 
 ### 1. session-end — 會話交接標準化執行器
 
-> **"你正在結束一個改變了項目狀態的會話。下一個會話必須知道什麼？"**
+> **「你正在結束一個改變了項目狀態的會話。下一個會話必須知道什麼？」**
 
 標準化會話交接執行器（基於 AI 協作框架 §9.3）。防止跨會話上下文丟失。
 
 **會話開始檢查清單（展示 4/7 項）：**
-- 驗證 CLAUDE.md + MEMORY.md 已加載且爲最新
+- 驗證 CLAUDE.md + MEMORY.md 已加載且為最新
 - 檢查記憶陳舊度（>30 天 → 標記待審查）
 - 加載 project_status.md 並確認當前階段
 - 確認環境（Python 版本、工作目錄、數據文件可達性）
@@ -60,9 +60,9 @@
 
 ### 2. write-claude-md — 項目級 CLAUDE.md 編寫/優化執行器
 
-> **"對每一行問：刪掉它 → Agent 會不會犯錯？不會就砍。"**
+> **「對每一行問：刪掉它 → Agent 會不會犯錯？不會就砍。」**
 
-五步協議——創建或審計項目級 CLAUDE.md 文件。不是模板填空——是結構化審計，問每一行是否真的約束了 Agent 行爲。
+五步協議——創建或審計項目級 CLAUDE.md 文件。不是模板填空——是結構化審計，問每一行是否真的約束了 Agent 行為。
 
 **步驟 0 + 五步協議：**
 
@@ -72,10 +72,10 @@
 | 1 | 脆弱性測試 | 刪掉這行 → Agent 會不會搞砸？ |
 | 2 | 五缺檢查 | 命令、規範、約束、環境、避坑都覆蓋了嗎？ |
 | 3 | 五濫檢查 | 是否包含了可推導信息、通用建議、易變數據、文件目錄、空泛建議？ |
-| 4 | 實證規則 | 白名單指針化、術語顯式定義、不維護"最後更新"日期 |
+| 4 | 實證規則 | 白名單指針化、術語顯式定義、不維護「最後更新」日期 |
 | 5 | 多後端驗證 | （重要項目）同 prompt → ≥2 個不同後端 → 收斂/衝突解決 |
 
-**生命週期感知：** 活躍/維護/CLOSED-凍結項目使用不同權重。CLOSED 項目優先記錄避坑和重新啟動指令，而非活躍開發命令。
+**生命週期感知：** 活躍/維護/CLOSED-凍結項目使用不同權重。CLOSED 項目優先記錄避坑和重啟動指令，而非活躍開發命令。
 
 **文件：** `SKILL.md` · [reference/](../write-claude-md/reference/) · [templates/](../write-claude-md/templates/)
 
@@ -83,16 +83,16 @@
 
 ### 3. kill-test-first — 事前否決 + 預登記
 
-> **"最貴的錯誤不在執行——在那些沒人問過'值不值得做'就開始的事情。"**
+> **「最貴的錯誤不在執行——在那些沒人問過'值不值得做'就開始的事情。」**
 
-預登記決策審計——面向新研究方向、量化策略或論文選題。在動工前強制回答"這東西值不值得做？"。
+預登記決策審計——面向新研究方向、量化策略或論文選題。在動工前強制回答「這東西值不值得做？」。
 
 **雙門協議：**
 
 ```
 門1：事前否決（步驟 0→8）
-  可證僞命題 → 先驗對標 → 最強反方 →
-  死亡判據（在看到結果前制定）→ 最便宜證僞 + 強基線 →
+  可證偽命題 → 先驗對標 → 最強反方 →
+  死亡判據（在看到結果前制定）→ 最便宜證偽 + 強基線 →
   三態裁決：GO / STOP / REDESIGN
 
 門2：預登記凍結（僅當 GO 時）
@@ -101,7 +101,7 @@
 ```
 
 **量化策略紅線（6 條不可妥協檢查）：**
-1. 無泄漏/前視偏差
+1. 無洩漏/前視偏差
 2. 最強基線比較（不能是稻草人）
 3. 清晰的樣本外定義
 4. 噪聲地板/顯著性檢驗
@@ -151,7 +151,7 @@ cp -r claude-skills/session-end ~/.claude/skills/   # 選你需要的
 │                                                  │
 │  kill-test-first          write-claude-md         │
 │  ┌─────────────┐         ┌──────────────┐        │
-│  │ 值不值得做？  │  GO →   │ 爲 Agent      │        │
+│  │ 值不值得做？  │  GO →   │ 為 Agent      │        │
 │  │ GO/STOP/    │────────▶│ 記錄項目      │        │
 │  │ REDESIGN    │         └──────┬───────┘        │
 │  └─────────────┘                │                 │
