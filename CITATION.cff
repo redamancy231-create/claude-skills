@@ -1,14 +1,16 @@
 cff-version: 1.2.0
 message: "If you use these skills in your project or research, please cite them as below."
-title: "Claude Skills — Battle-Tested Claude Code Skills for Session Handoff, Project Documentation, and Decision Audit"
+title: "Claude Skills — 三个实战验证的 Claude Code Skill：会话交接、项目文档生成、事前否决审计"
+title-en: "Claude Skills — Battle-Tested Claude Code Skills for Session Handoff, Project Documentation, and Decision Audit"
 authors:
   - given-names: Acerolaorion
 type: software
 license: CC-BY-4.0
-version: 1.0.0
-date-released: 2026-07-10
+version: 1.0.1
+date-released: 2026-07-19
 url: "https://github.com/redamancy231-create/claude-skills"
-abstract: "Three field-verified Claude Code Skills extracted from 50+ rounds of cross-model independent review across 5 LLM backends: session-end (session handoff), write-claude-md (CLAUDE.md authoring), and kill-test-first (pre-registration decision audit). Each skill follows a unified router-pattern design with progressive disclosure and was independently validated through adversarial multi-backend review."
+abstract: "三个从真实项目中提取的 Claude Code Skill：session-end（会话交接）、write-claude-md（CLAUDE.md 编写/审计）、kill-test-first（预登记决策审计）。每个 Skill 各经 ≥2 个不同 LLM 后端独立审查，框架整体经 50+ 轮跨模型交叉验证。采用统一的路由器模式 + 渐进式披露设计。"
+abstract-en: "Three field-verified Claude Code Skills extracted from production projects: session-end (session handoff), write-claude-md (CLAUDE.md authoring/auditing), and kill-test-first (pre-registration decision audit). Each skill independently reviewed by ≥2 different LLM backends; the framework as a whole underwent 50+ rounds of cross-model verification. Unified router-pattern design with progressive disclosure."
 keywords:
   - "claude-code"
   - "agent-skills"
