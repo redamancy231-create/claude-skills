@@ -18,7 +18,7 @@
 
 Every skill in this collection was extracted from real project workflows — not designed in a vacuum. Each one:
 
-- **Field-verified** through 50+ rounds of multi-model independent review (GPT-5.5 / DeepSeek-V4-Pro / Kimi-K2.7 / Qwen3.7-Max / GLM-5.2)
+- **Field-verified** — each skill independently reviewed by ≥2 different LLM backends; the framework as a whole underwent 50+ rounds of cross-model verification (GPT-5.5 / DeepSeek-V4-Pro / Kimi-K2.7 / Qwen3.7-Max / GLM-5.2)
 - **Adversarially audited** — each skill underwent its own kill-test before being published
 - **Portable** — user scope, works across projects without per-project configuration
 
