@@ -3,11 +3,11 @@
   "cases": [
     {
       "id": 1,
-      "name": "形态匹配ETF策略-第0天假设回放",
+      "name": "某形态匹配择时策略-第0天假设回放",
       "date": "2026-06-07",
       "type": "replay",
       "background": {
-        "actual_outcome": "7天内(2026-05-13至05-19)高速迭代18版(v0-v17,一天2-3版),直到开发收尾后的复盘(5-21总结、6-01评估)才发现核心假设理论上注定失败,滚动IC从V2系统性为负(开发7天里一次都没暴露)",
+        "actual_outcome": "7天内高速迭代18版(一天2-3版),直到开发收尾后的复盘才发现核心假设理论上注定失败,滚动IC从早期版本系统性为负(开发7天里一次都没暴露)",
         "key_lesson": "迭代速度快不等于方向对;7天18版每版都在优化执行,无一版问'该不该做';事前否决本可第1天STOP。越能快速迭代越需要这道闸",
         "replay_goal": "把时钟拨回第0天,验证kill-test-first门1能否在开工前拦下"
       },
@@ -16,7 +16,7 @@
         "strongest_counter": "DTW为容忍时间弯折匹配形状而牺牲精确时间位置;预测未来最依赖最近一段位置精确的方向性动量;弯折把形状像但方向相反的片段判为近邻;DTW不创造信息只换度量;弱有效市场日频方向近鞅",
         "counter_is_apriori": true,
         "cheapest_test": {
-          "data": "中证500 sh000905 日线",
+          "data": "某宽基指数 日线",
           "design": "过去L=20日形态→DTW取top-K=20历史近邻→用近邻后续H=5日收益预测目标后续5日收益,算样本外RankIC",
           "no_leakage_constraint": "s+H<=t-L",
           "baseline_included": true,
@@ -34,7 +34,7 @@
       "adversarial_self_check": {
         "counter_apriori_not_cheating": true,
         "experiment_really_run": true,
-        "honest_boundary": "测中证500指数+特定参数(L20/H5/K20),非原ETF截面策略精确复现;不能证明原策略必死,也不需要——事前否决只把举证责任压到建设之前"
+        "honest_boundary": "测某宽基指数+特定参数(L20/H5/K20),非原策略精确复现;不能证明原策略必死,也不需要——事前否决只把举证责任压到建设之前"
       },
       "skill_outcome": {
         "validated": ["加载顺畅", "门1四动作可照做", "第0天触发STOP"],
@@ -65,7 +65,7 @@
       "still_unanswered": "三审定稿≠有效;真有没有alpha两轮纸面复审都答不了,只能靠前瞻/盲化使用验证;定稿只说明内部自洽无已知硬伤,不说明真能改变决策",
       "incremental_review_prior_art_gate_2026_06_09": {
         "what": "门1步骤2先验对标关由 Claude Opus 4.8 单独新增、未先经独立审 → 换 ChatGPT-5.5 做零卷入增量复审(只审这一关, 非重审整体)",
-        "reviewer_identity": "执行身份自报 Codex/GPT-5 系(=Codex CLI 同款模型, 与原版第1轮同款); 对新增关零卷入、对整体非全新视角; 自陈未外部核验 FMTI/LIT 事实",
+        "reviewer_identity": "执行身份自报 Codex/GPT-5 系(=Codex CLI 同款模型, 与原版第1轮同款); 对新增关零卷入、对整体非全新视角; 自陈未外部核验 FMTI/该项目事实",
         "verdict": "小改后保留",
         "key_findings": "F2假阴性(术语找不对→搜索看似合格, 最高价值) / F3'说不清差异'不可判定 / F4+F8缺可验证来源与检索日志、走过场 / F7b真实SKILL与EXAMPLES未同步案例3(Opus漏改) / F1可能误读为跳过最强反方 / F5价值=通用脚手架非独有alpha但作screen成立",
         "decision_owner_action": "Opus 按'精简硬化'尺度落地8条: 术语三角验证+negative_scope / 差异比核心问题·输出物·评估指标三项 / 具名先例须可验证链接(AI只候选) / '搜过'判不合格 / 步骤3必填提醒 / Self-check纳入 / 门1标题改'早于cheap test结果'。用 reviewer 自己的 F5(screen非full review)制约 F2/F3/F4 避免过度工程",
@@ -75,24 +75,24 @@
     },
     {
       "id": 3,
-      "name": "LIT零对标FMTI-事前对标回放",
+      "name": "某项目零对标FMTI-事前对标回放",
       "date": "2026-06-09",
       "type": "replay",
       "gate": "门1步骤2 先验对标(prior-art check)",
-      "evidence_boundary": "2026-06-09对已知结局(已发现重合)的事后回放,存在hindsight;只说明对标关在此回放给出REDESIGN信号,不能证明LIT第0天必然搜到FMTI(取决于检索质量/术语找没找对)",
+      "evidence_boundary": "2026-06-09对已知结局(已发现重合)的事后回放,存在hindsight;只说明对标关在此回放给出REDESIGN信号,不能证明该项目第0天必然搜到FMTI(取决于检索质量/术语找没找对)",
       "background": {
-        "actual_outcome": "LIT由autonomous agent自主设计14类目×48-53项评LLM报告披露,全程零引用零对标;2026-06-09第四轮方法论评估才发现与Stanford FMTI(100指标,已评含Anthropic/OpenAI在内10-14家主流厂商)高度重合",
+        "actual_outcome": "某LLM报告完整性评估项目由autonomous agent自主设计14类目×48-53项评LLM报告披露,全程零引用零对标;后期方法论评估才发现与Stanford FMTI(100指标,已评含Anthropic/OpenAI在内10-14家主流厂商)高度重合",
         "key_lesson": "教训不是做错,是做了别人已做过且更成熟的东西却不自知;agent参数里其实知道FMTI但构建模式下不主动调出对标",
-        "replay_goal": "把时钟拨回LIT第0天,用门1步骤2先验对标跑一遍能否拦下重复造轮子"
+        "replay_goal": "把时钟拨回该项目第0天,用门1步骤2先验对标跑一遍能否拦下重复造轮子"
       },
       "prior_art_check": {
         "terminology": ["transparency index", "disclosure evaluation", "transparency reporting"],
-        "terminology_note": "不知道这串黑话就搜不到,非专家agent的盲区",
+        "terminology_note": "不知道这串黑话就搜不到,非专家agent的盲区(该项目根因)",
         "adversarial_query": "假设我在重复造轮子最可能重复了谁",
         "nearest_prior_work": {"name": "Stanford FMTI", "cite": "Bommasani et al. 2023, arXiv:2310.12941", "verified_online": true},
         "three_questions": {
           "what_exists": "FMTI:100指标×3域(upstream/model/downstream)/多评分者/公开协议/已评主流厂商/median 37",
-          "my_difference": "LIT有0-3质量分级+对抗式诚信类目(framing/consistency/independence/leaderboard)+单报告深读+跨代+中国语境;FMTI二元指标/厂商级/横截面。差异真实但局部",
+          "my_difference": "该项目有0-3质量分级+对抗式诚信类目(framing/consistency/independence/leaderboard)+单报告深读+跨代+中国语境;FMTI二元指标/厂商级/横截面。差异真实但局部",
           "why_not_just_use_theirs": "重叠主体(披露完整性那部分)说不清为何不直接用FMTI"
         }
       },
@@ -104,8 +104,8 @@
         "single_point": "单点回放非'对标关有效'的证明;真有效需前瞻/盲化(不知结局者用/不用这关比重复率/省的沉没成本)"
       },
       "skill_outcome": {
-        "validated": ["坐实门1步骤2位置:对标在cheap test之前;LIT若先对标根本不用跑评分实验就该REDESIGN,比案例1 DTW更早更便宜"],
-        "improvement_forced": "逼出'先要术语'子步骤:LIT根因是agent不知这事叫transparency index→检索第一步必须问黑话,否则非专家+agent双盲"
+        "validated": ["坐实门1步骤2位置:对标在cheap test之前;该项目若先对标根本不用跑评分实验就该REDESIGN,比案例1 DTW更早更便宜"],
+        "improvement_forced": "逼出'先要术语'子步骤:该项目的根因是agent不知这事叫transparency index→检索第一步必须问黑话,否则非专家+agent双盲"
       }
     }
   ]
