@@ -4,7 +4,6 @@
     {
       "id": 1,
       "name": "某形态匹配择时策略-第0天假设回放",
-      "date": "2026-06-07",
       "type": "replay",
       "background": {
         "actual_outcome": "短时间内高速迭代十余版,直到开发收尾后的复盘才发现核心假设理论上注定失败,滚动IC从早期版本系统性为负(开发期间一次都没暴露)",
@@ -44,16 +43,16 @@
     {
       "id": 2,
       "name": "kill-test-first自身的多轮审查史",
-      "date": "2026-06-07",
       "type": "self_review_history",
       "evidence_boundary": "单点过程记录,非'多模型审查>单模型自审'的证明;只展示这一次独立审查抓到了自审没抓到的,不可外推为普遍结论",
       "review_chain": [
-        {"stage": "设计", "role": "Claude Opus 4.8", "involvement": "设计者(非独立)", "output": "轻量触发器初版+自审对抗式自检"},
-        {"stage": "回放", "role": "Claude", "involvement": "自验(非独立)", "output": "案例1:DTW被朴素动量碾压→逼出'必带基线'"},
+        {"stage": "设计", "role": "Claude", "involvement": "设计者(非独立)", "output": "轻量触发器初版+自审对抗式自检"},
+        {"stage": "回放", "role": "Claude", "involvement": "自验(非独立)", "output": "案例1:DTW未优于朴素动量基线→逼出'必带基线'"},
         {"stage": "第1轮独立审", "role": "Codex", "involvement": "零卷入", "output": "判重大修改:5条硬伤(独立否决无机制/死亡判据顺序bug/门1门2数据边界/过度声称/前置门槛外包)+alpha误定位"},
         {"stage": "整合大改", "role": "Claude整合官", "involvement": "-", "output": "全采纳→重写完备协议版"},
-        {"stage": "第2轮独立审", "role": "Qwen3-235B-A22B", "involvement": "零卷入", "output": "判小改后定稿·0高风险硬伤;确认Codex5/5解决;抓大改新引入问题(REDESIGN可逃避STOP/三态未覆盖象限);建议砍自身死亡判据"},
-        {"stage": "调和定稿", "role": "用户(decision owner)", "involvement": "-", "output": "采纳qwen中风险小改;自身死亡判据保留(调和Codex'加'vs qwen'砍'的对冲)"}
+        {"stage": "第2轮独立审", "role": "Qwen", "involvement": "零卷入", "output": "判小改后定稿·0高风险硬伤;确认Codex5/5解决;抓大改新引入问题(REDESIGN可逃避STOP/三态未覆盖象限);建议砍自身死亡判据"},
+        {"stage": "调和定稿", "role": "用户(decision owner)", "involvement": "-", "output": "采纳qwen中风险小改;自身死亡判据保留(调和Codex'加'vs qwen'砍'的对冲)"},
+        {"stage": "后续增量复审", "role": "ChatGPT", "involvement": "零卷入", "output": "门1步骤2先验对标关经零卷入增量复审,小改后保留"}
       ],
       "observations_not_universal": [
         "自审有盲点:Claude对抗式自检没发现死亡判据顺序bug,Codex一眼抓到",
@@ -62,21 +61,20 @@
         "收敛判据防无限诊断:预设无高风险硬伤即定稿,第2轮0硬伤即收口"
       ],
       "artifacts": ["审查记录与提示词双件均位于项目归档目录"],
-      "still_unanswered": "三审定稿≠有效;真有没有alpha两轮纸面复审都答不了,只能靠前瞻/盲化使用验证;定稿只说明内部自洽无已知硬伤,不说明真能改变决策",
-      "incremental_review_prior_art_gate_2026_06_09": {
-        "what": "门1步骤2先验对标关由 Claude Opus 4.8 单独新增、未先经独立审 → 换 ChatGPT-5.5 做零卷入增量复审(只审这一关, 非重审整体)",
-        "reviewer_identity": "执行身份自报 Codex/GPT-5 系(=Codex CLI 同款模型, 与原版第1轮同款); 对新增关零卷入、对整体非全新视角; 自陈未外部核验 FMTI/该项目事实",
+      "still_unanswered": "多轮审查定稿≠有效;真有没有alpha两轮纸面复审都答不了,只能靠前瞻/盲化使用验证;定稿只说明内部自洽无已知硬伤,不说明真能改变决策",
+      "incremental_review_prior_art_gate": {
+        "what": "门1步骤2先验对标关由设计模型单独新增、未先经独立审 → 换另一模型做零卷入增量复审(只审这一关, 非重审整体)",
+        "reviewer_identity": "执行身份自报为同模型族增量复审; 对新增关零卷入、对整体非全新视角; 自陈未外部核验 FMTI/该项目事实",
         "verdict": "小改后保留",
-        "key_findings": "F2假阴性(术语找不对→搜索看似合格, 最高价值) / F3'说不清差异'不可判定 / F4+F8缺可验证来源与检索日志、走过场 / F7b真实SKILL与EXAMPLES未同步案例3(Opus漏改) / F1可能误读为跳过最强反方 / F5价值=通用脚手架非独有alpha但作screen成立",
-        "decision_owner_action": "Opus 按'精简硬化'尺度落地8条: 术语三角验证+negative_scope / 差异比核心问题·输出物·评估指标三项 / 具名先例须可验证链接(AI只候选) / '搜过'判不合格 / 步骤3必填提醒 / Self-check纳入 / 门1标题改'早于cheap test结果'。用 reviewer 自己的 F5(screen非full review)制约 F2/F3/F4 避免过度工程",
-        "opus_self_disclosed_error": "递给 reviewer 的 prompt 附件A曾手改成'已同步版'、与真实文件不一致(F7b戳穿); 已修真实文件。继 Codex/GPT-5.5 当两个模型后第二次失真, 强化'核实关'必要性",
+        "key_findings": "假阴性(术语找不对→搜索看似合格) / 说不清差异判据不可判定 / 缺可验证来源与检索日志 / 真实SKILL与EXAMPLES未同步案例3 / 可能误读为跳过最强反方 / 价值=通用脚手架非独有alpha但作screen成立",
+        "decision_owner_action": "按'精简硬化'尺度落地: 术语三角验证+negative_scope / 差异比核心问题·输出物·评估指标三项 / 具名先例须可验证链接(AI只候选) / '搜过'判不合格 / 步骤3必填提醒 / Self-check纳入 / 门1标题改'早于cheap test结果'。用 reviewer 自己的判断制约避免过度工程",
+        "opus_self_disclosed_error": "递给 reviewer 的 prompt 附件A曾手改成'已同步版'、与真实文件不一致; 已修真实文件。同一模型族被误认为独立模型导致失真, 强化'核实关'必要性",
         "artifacts": ["增量复审记录与提示词位于项目归档目录"]
       }
     },
     {
       "id": 3,
       "name": "某项目零对标FMTI-事前对标回放",
-      "date": "2026-06-09",
       "type": "replay",
       "gate": "门1步骤2 先验对标(prior-art check)",
       "evidence_boundary": "对已知结局(已发现重合)的事后回放,存在hindsight;只说明对标关在此回放给出REDESIGN信号,不能证明该项目第0天必然搜到FMTI(取决于检索质量/术语找没找对)",
@@ -104,7 +102,7 @@
         "single_point": "单点回放非'对标关有效'的证明;真有效需前瞻/盲化(不知结局者用/不用这关比重复率/省的沉没成本)"
       },
       "skill_outcome": {
-        "observed_in_replay": ["在本次回放中标对比cheap test更早给出信号;该项目若先对标不用跑评分实验就该REDESIGN,比案例1更早更便宜"],
+        "observed_in_replay": ["在本次回放中，对标比cheap test更早给出信号;该项目若先对标不用跑评分实验就该REDESIGN,比案例1更早更便宜"],
         "improvement_forced": "逼出'先要术语'子步骤:该项目的根因是agent不知这事叫transparency index→检索第一步必须问黑话,否则非专家+agent双盲"
       }
     }
