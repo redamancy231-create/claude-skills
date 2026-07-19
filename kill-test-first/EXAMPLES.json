@@ -7,8 +7,8 @@
       "date": "2026-06-07",
       "type": "replay",
       "background": {
-        "actual_outcome": "7天内高速迭代18版(一天2-3版),直到开发收尾后的复盘才发现核心假设理论上注定失败,滚动IC从早期版本系统性为负(开发7天里一次都没暴露)",
-        "key_lesson": "迭代速度快不等于方向对;7天18版每版都在优化执行,无一版问'该不该做';事前否决本可第1天STOP。越能快速迭代越需要这道闸",
+        "actual_outcome": "短时间内高速迭代十余版,直到开发收尾后的复盘才发现核心假设理论上注定失败,滚动IC从早期版本系统性为负(开发期间一次都没暴露)",
+        "key_lesson": "迭代速度快不等于方向对;每版都在优化执行,无一版问'该不该做';事前否决本可第1天STOP。越能快速迭代越需要这道闸",
         "replay_goal": "把时钟拨回第0天,验证kill-test-first门1能否在开工前拦下"
       },
       "gate1": {
@@ -30,20 +30,20 @@
         "death_criterion_preregistered": "DTW RankIC<=0 或 DTW不优于朴素动量基线 => STOP"
       },
       "verdict": "STOP",
-      "verdict_reason": "DTW+0.016约等于噪声(N=178下1个标准误约0.075),被朴素动量+0.097碾压,欧氏为负;形状弯折是负价值,坐实先验反方论证",
+      "verdict_reason": "DTW+0.016约等于噪声(N=178下1个标准误约0.075),未优于朴素动量基线(+0.097);在该检验下证据不支持继续建设",
       "adversarial_self_check": {
         "counter_apriori_not_cheating": true,
         "experiment_really_run": true,
         "honest_boundary": "测某宽基指数+特定参数(L20/H5/K20),非原策略精确复现;不能证明原策略必死,也不需要——事前否决只把举证责任压到建设之前"
       },
       "skill_outcome": {
-        "validated": ["加载顺畅", "门1四动作可照做", "第0天触发STOP"],
+        "observed_in_replay": ["加载顺畅", "门1四动作可照做", "在本次回放中于第0天给出STOP信号"],
         "improvement_forced": "门1动作3补入'必带朴素基线对照'(对应playbook §11.3),因微弱正IC需基线对照才能戳穿"
       }
     },
     {
       "id": 2,
-      "name": "kill-test-first自身的三审定稿史",
+      "name": "kill-test-first自身的多轮审查史",
       "date": "2026-06-07",
       "type": "self_review_history",
       "evidence_boundary": "单点过程记录,非'多模型审查>单模型自审'的证明;只展示这一次独立审查抓到了自审没抓到的,不可外推为普遍结论",
@@ -61,7 +61,7 @@
         "两独立模型会对冲:Codex推完备vs qwen推精简,在自身死亡判据上方向相反,由人调和",
         "收敛判据防无限诊断:预设无高风险硬伤即定稿,第2轮0硬伤即收口"
       ],
-      "artifacts": ["kill-test-first_独立复审_Codex_2026-06-07.{md,json}", "kill-test-first_独立复审_qwen37max_2026-06-07.{md,json}", "两份复审提示词双件"],
+      "artifacts": ["审查记录与提示词双件均位于项目归档目录"],
       "still_unanswered": "三审定稿≠有效;真有没有alpha两轮纸面复审都答不了,只能靠前瞻/盲化使用验证;定稿只说明内部自洽无已知硬伤,不说明真能改变决策",
       "incremental_review_prior_art_gate_2026_06_09": {
         "what": "门1步骤2先验对标关由 Claude Opus 4.8 单独新增、未先经独立审 → 换 ChatGPT-5.5 做零卷入增量复审(只审这一关, 非重审整体)",
@@ -70,7 +70,7 @@
         "key_findings": "F2假阴性(术语找不对→搜索看似合格, 最高价值) / F3'说不清差异'不可判定 / F4+F8缺可验证来源与检索日志、走过场 / F7b真实SKILL与EXAMPLES未同步案例3(Opus漏改) / F1可能误读为跳过最强反方 / F5价值=通用脚手架非独有alpha但作screen成立",
         "decision_owner_action": "Opus 按'精简硬化'尺度落地8条: 术语三角验证+negative_scope / 差异比核心问题·输出物·评估指标三项 / 具名先例须可验证链接(AI只候选) / '搜过'判不合格 / 步骤3必填提醒 / Self-check纳入 / 门1标题改'早于cheap test结果'。用 reviewer 自己的 F5(screen非full review)制约 F2/F3/F4 避免过度工程",
         "opus_self_disclosed_error": "递给 reviewer 的 prompt 附件A曾手改成'已同步版'、与真实文件不一致(F7b戳穿); 已修真实文件。继 Codex/GPT-5.5 当两个模型后第二次失真, 强化'核实关'必要性",
-        "artifacts": ["kill-test-first_先验对标关_复审_GPT55_prompt.md", "kill-test-first_先验对标关_复审_GPT55_config.json", "kill-test-first_先验对标关_独立复审_GPT55_2026-06-09.md", "kill-test-first_先验对标关_独立复审_GPT55_2026-06-09.json"]
+        "artifacts": ["增量复审记录与提示词位于项目归档目录"]
       }
     },
     {
@@ -79,9 +79,9 @@
       "date": "2026-06-09",
       "type": "replay",
       "gate": "门1步骤2 先验对标(prior-art check)",
-      "evidence_boundary": "2026-06-09对已知结局(已发现重合)的事后回放,存在hindsight;只说明对标关在此回放给出REDESIGN信号,不能证明该项目第0天必然搜到FMTI(取决于检索质量/术语找没找对)",
+      "evidence_boundary": "对已知结局(已发现重合)的事后回放,存在hindsight;只说明对标关在此回放给出REDESIGN信号,不能证明该项目第0天必然搜到FMTI(取决于检索质量/术语找没找对)",
       "background": {
-        "actual_outcome": "某LLM报告完整性评估项目由autonomous agent自主设计14类目×48-53项评LLM报告披露,全程零引用零对标;后期方法论评估才发现与Stanford FMTI(100指标,已评含Anthropic/OpenAI在内10-14家主流厂商)高度重合",
+        "actual_outcome": "某LLM报告完整性评估项目由autonomous agent自主设计十余类、数十项指标评LLM报告披露,全程零引用零对标;后期方法论评估才发现与Stanford FMTI(100指标,已评多家主流厂商)高度重合",
         "key_lesson": "教训不是做错,是做了别人已做过且更成熟的东西却不自知;agent参数里其实知道FMTI但构建模式下不主动调出对标",
         "replay_goal": "把时钟拨回该项目第0天,用门1步骤2先验对标跑一遍能否拦下重复造轮子"
       },
@@ -91,8 +91,8 @@
         "adversarial_query": "假设我在重复造轮子最可能重复了谁",
         "nearest_prior_work": {"name": "Stanford FMTI", "cite": "Bommasani et al. 2023, arXiv:2310.12941", "verified_online": true},
         "three_questions": {
-          "what_exists": "FMTI:100指标×3域(upstream/model/downstream)/多评分者/公开协议/已评主流厂商/median 37",
-          "my_difference": "该项目有0-3质量分级+对抗式诚信类目(framing/consistency/independence/leaderboard)+单报告深读+跨代+中国语境;FMTI二元指标/厂商级/横截面。差异真实但局部",
+          "what_exists": "FMTI:100指标×3域(upstream/model/downstream)/多评分者/公开协议/已评主流厂商",
+          "my_difference": "该项目有0-3质量分级+若干对抗式诚信类目+单报告深读;FMTI二元指标/厂商级/横截面。差异真实但局部",
           "why_not_just_use_theirs": "重叠主体(披露完整性那部分)说不清为何不直接用FMTI"
         }
       },
@@ -104,7 +104,7 @@
         "single_point": "单点回放非'对标关有效'的证明;真有效需前瞻/盲化(不知结局者用/不用这关比重复率/省的沉没成本)"
       },
       "skill_outcome": {
-        "validated": ["坐实门1步骤2位置:对标在cheap test之前;该项目若先对标根本不用跑评分实验就该REDESIGN,比案例1 DTW更早更便宜"],
+        "observed_in_replay": ["在本次回放中标对比cheap test更早给出信号;该项目若先对标不用跑评分实验就该REDESIGN,比案例1更早更便宜"],
         "improvement_forced": "逼出'先要术语'子步骤:该项目的根因是agent不知这事叫transparency index→检索第一步必须问黑话,否则非专家+agent双盲"
       }
     }
