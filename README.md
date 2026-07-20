@@ -183,6 +183,7 @@ cp -r claude-skills/session-end ~/.claude/skills/   # 选你需要的
 | [**Prompt-TDD Methodology**](https://github.com/redamancy231-create/prompt-tdd-methodology) | **同系项目** — kill-test-first 是 prompt-TDD 对照实验协议的直接应用 |
 | [**DOCX Pipeline**](https://github.com/redamancy231-create/docx-pipeline) | **同系项目** — Markdown → 中文 DOCX 管道；在其 3 轮审查过程中使用了 session-end 和 write-claude-md |
 | [**ETF Pattern Match — pybind11**](https://github.com/redamancy231-create/etf-pattern-match-pybind11) | **同系项目** — C++20/pybind11 量化策略加速；同样应用多模型审查闭合 |
+| [**Methodology Handbook**](https://github.com/redamancy231-create/methodology-handbook) | **同系项目** — 50 条 AI 协作实战教训速查；Skill 设计协议的经验来源之一 |
 | [**M&A Case Study Pipeline**](https://github.com/redamancy231-create/ma-case-study-pipeline) | **同系项目** — 8 阶段多模型学术生产流水线，含交叉盲审对照实验 |
 | [**Awesome Skills**](https://github.com/gmh5225/awesome-skills) | **收录于** — 本 Skill 集合已被 awesome-skills 精选目录收录 |
 
