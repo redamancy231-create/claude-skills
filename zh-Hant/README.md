@@ -184,6 +184,7 @@ cp -r claude-skills/session-end ~/.claude/skills/   # 選你需要的
 | [**DOCX Pipeline**](https://github.com/redamancy231-create/docx-pipeline) | **同系項目** — Markdown → 中文 DOCX 管道；在其 3 輪審查過程中使用了 session-end 和 write-claude-md |
 | [**ETF Pattern Match — pybind11**](https://github.com/redamancy231-create/etf-pattern-match-pybind11) | **同系項目** — C++20/pybind11 量化策略加速；同樣應用多模型審查閉合 |
 | [**M&A Case Study Pipeline**](https://github.com/redamancy231-create/ma-case-study-pipeline) | **同系項目** — 8 階段多模型學術生產流水線，含交叉盲審對照實驗 |
+| [**方法論提取方法論**](https://github.com/redamancy231-create/methodology-extraction-methodology) | **同系項目** — 22專案元層次方法論提取，三個Skill的提取方法論框架的證據卡源之一 |
 | [**Awesome Skills**](https://github.com/gmh5225/awesome-skills) | **收錄於** — 本 Skill 集合已被 awesome-skills 精選目錄收錄 |
 
 ## 許可
