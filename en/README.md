@@ -186,6 +186,7 @@ cp -r claude-skills/session-end ~/.claude/skills/   # pick the one you need
 | [**DOCX Pipeline**](https://github.com/redamancy231-create/docx-pipeline) | **Sibling project** — Markdown → Chinese DOCX pipeline; used session-end and write-claude-md during its own 3-round review process |
 | [**ETF Pattern Match — pybind11**](https://github.com/redamancy231-create/etf-pattern-match-pybind11) | **Sibling project** — C++20/pybind11 quant strategy acceleration; similarly applies multi-model review closure |
 | [**M&A Case Study Pipeline**](https://github.com/redamancy231-create/ma-case-study-pipeline) | **Sibling project** — 8-stage multi-model academic production pipeline with cross-blind review |
+| [**Methodology Extraction Methodology**](https://github.com/redamancy231-create/methodology-extraction-methodology) | **Sibling project** — Systematic methodology extraction from 22 projects; evidence card #11 source for the skill extraction framework |
 | [**Awesome Skills**](https://github.com/gmh5225/awesome-skills) | **Featured in** — this skill collection is listed in the awesome-skills curated directory of agent skills |
 
 ## License
