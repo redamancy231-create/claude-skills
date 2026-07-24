@@ -174,18 +174,10 @@ cp -r claude-skills/session-end ~/.claude/skills/   # 選你需要的
 
 ---
 
-## 相關項目
 
-| 項目 | 關係 |
-|------|------|
-| [**AI 協作框架**](https://github.com/redamancy231-create/ai-collaboration-framework) | **方法論上游** — 這些 Skill 從框架 §9.2–§9.3 提取，經 50+ 輪跨模型審查 |
-| [**Independent Review Toolkit**](https://github.com/redamancy231-create/independent-review-toolkit) | **審查方法來源** — 集合中每個 Skill 均使用該工具包 SOP 進行獨立驗證 |
-| [**Prompt-TDD Methodology**](https://github.com/redamancy231-create/prompt-tdd-methodology) | **同系項目** — kill-test-first 是 prompt-TDD 對照實驗協議的直接應用 |
-| [**DOCX Pipeline**](https://github.com/redamancy231-create/docx-pipeline) | **同系項目** — Markdown → 中文 DOCX 管道；在其 3 輪審查過程中使用了 session-end 和 write-claude-md |
-| [**ETF Pattern Match — pybind11**](https://github.com/redamancy231-create/etf-pattern-match-pybind11) | **同系項目** — C++20/pybind11 量化策略加速；同樣應用多模型審查閉合 |
-| [**M&A Case Study Pipeline**](https://github.com/redamancy231-create/ma-case-study-pipeline) | **同系項目** — 8 階段多模型學術生產流水線，含交叉盲審對照實驗 |
-| [**方法論提取方法論**](https://github.com/redamancy231-create/methodology-extraction-methodology) | **同系項目** — 22專案元層次方法論提取，三個Skill的提取方法論框架的證據卡源之一 |
-| [**Awesome Skills**](https://github.com/gmh5225/awesome-skills) | **收錄於** — 本 Skill 集合已被 awesome-skills 精選目錄收錄 |
+## 相關專案
+
+更多專案請見 [個人主頁](https://github.com/redamancy231-create/redamancy231-create)
 
 ## 許可
 
