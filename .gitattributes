@@ -1,0 +1,2 @@
+# 让 GitHub Linguist 统计 Markdown 文件（默认归类为 prose 被排除）
+*.md linguist-detectable
