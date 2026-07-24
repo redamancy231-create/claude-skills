@@ -185,6 +185,7 @@ cp -r claude-skills/session-end ~/.claude/skills/   # 选你需要的
 | [**ETF Pattern Match — pybind11**](https://github.com/redamancy231-create/etf-pattern-match-pybind11) | **同系项目** — C++20/pybind11 量化策略加速；同样应用多模型审查闭合 |
 | [**Methodology Handbook**](https://github.com/redamancy231-create/methodology-handbook) | **同系项目** — 50 条 AI 协作实战教训速查；Skill 设计协议的经验来源之一 |
 | [**M&A Case Study Pipeline**](https://github.com/redamancy231-create/ma-case-study-pipeline) | **同系项目** — 8 阶段多模型学术生产流水线，含交叉盲审对照实验 |
+| [**方法论提取方法论**](https://github.com/redamancy231-create/methodology-extraction-methodology) | **同系项目** — 22项目元层次方法论提取，三个Skill的提取方法论框架的证据卡源之一 |
 | [**Awesome Skills**](https://github.com/gmh5225/awesome-skills) | **收录于** — 本 Skill 集合已被 awesome-skills 精选目录收录 |
 
 ## 许可
