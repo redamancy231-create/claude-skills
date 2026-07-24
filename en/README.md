@@ -176,18 +176,10 @@ cp -r claude-skills/session-end ~/.claude/skills/   # pick the one you need
 
 ---
 
+
 ## Related Projects
 
-| Project | Relationship |
-|------|------|
-| [**AI Collaboration Framework**](https://github.com/redamancy231-create/ai-collaboration-framework) | **Methodology upstream** — these skills were extracted from the framework (§9.2–§9.3) after 50+ rounds of cross-model review |
-| [**Independent Review Toolkit**](https://github.com/redamancy231-create/independent-review-toolkit) | **Review methodology source** — each skill in this collection was independently validated using the toolkit's SOP |
-| [**Prompt-TDD Methodology**](https://github.com/redamancy231-create/prompt-tdd-methodology) | **Sibling project** — kill-test-first is a direct application of the prompt-TDD controlled experiment protocol |
-| [**DOCX Pipeline**](https://github.com/redamancy231-create/docx-pipeline) | **Sibling project** — Markdown → Chinese DOCX pipeline; used session-end and write-claude-md during its own 3-round review process |
-| [**ETF Pattern Match — pybind11**](https://github.com/redamancy231-create/etf-pattern-match-pybind11) | **Sibling project** — C++20/pybind11 quant strategy acceleration; similarly applies multi-model review closure |
-| [**M&A Case Study Pipeline**](https://github.com/redamancy231-create/ma-case-study-pipeline) | **Sibling project** — 8-stage multi-model academic production pipeline with cross-blind review |
-| [**Methodology Extraction Methodology**](https://github.com/redamancy231-create/methodology-extraction-methodology) | **Sibling project** — Systematic methodology extraction from 22 projects; evidence card #11 source for the skill extraction framework |
-| [**Awesome Skills**](https://github.com/gmh5225/awesome-skills) | **Featured in** — this skill collection is listed in the awesome-skills curated directory of agent skills |
+See more projects at [profile](https://github.com/redamancy231-create/redamancy231-create)
 
 ## License
 
